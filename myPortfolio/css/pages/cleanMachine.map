@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "cleanMachine.css",
+	"sources": [
+		"../../sass/pages/cleanMachine.sass"
+	],
+	"sourcesContent": [
+		""
+	],
+	"names": [],
+	"mappings": ""
+}

@@ -1,0 +1,30 @@
+
+<div id="myNav" class="overlay">
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <div class="overlay-content">
+  	<a href="index.html" onclick="closeNav()">Home</a>
+  	<a href="index.html#gallery" onclick="closeNav()">Gallery</a>
+    <a href="index.html#about" onclick="closeNav()">About</a>
+    <a href="index.html#contact" onclick="closeNav()">Contact</a>
+  </div>
+  
+</div>
+
+<span class="hamburger" onclick="openNav()">
+	<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path d="M19 11h-14v-2h14v2zm0 2h-14v2h14v-2zm0 4h-14v2h14v-2zm3-11v16h-20v-16h20zm2-6h-24v24h24v-24z"/></svg>
+</span>
+
+<!-- Hamburger: &#9776; -->
+
+<script type="text/javascript">
+/* Open */
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+/* Close */
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>

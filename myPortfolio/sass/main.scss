@@ -1,0 +1,19 @@
+// ============== main scss =======================
+
+@charset "UTF-8";
+
+// VENDORS
+@import 'vendors/normalize';
+@import 'vendors/adyVenPre';
+
+// BASE
+@import	'base/varmix';
+@import 'base/responsive';
+@import 'base/general';
+@import	'base/layout';
+
+
+// PAGES
+@import 'pages/cleanMachine';
+@import 'pages/hatikva6';
+

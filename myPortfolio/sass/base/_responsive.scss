@@ -1,0 +1,128 @@
+/* ============== Responsive ======================= */
+
+@mixin media($screen) {
+	@if $screen==phone {
+	// Extra small devices (phones, 600px and down)
+		@media only screen and (max-width: 600px) {
+			@content
+		}
+	} 
+	@if $screen==tablet {
+	// Small devices (portrait tablets and large phones, 600px and up)
+		@media only screen and (min-width: 600px) {
+			@content
+		}
+	} 
+	@if $screen==ltablet {
+	// Medium devices (landscape tablets, 768px and up)
+		@media only screen and (min-width: 768px) {
+			@content
+		}
+	} 
+	@if $screen==laptop {
+	// Large devices (laptops/desktops, 992px and up)
+		@media only screen and (min-width: 992px) {
+			@content
+		}
+	} 
+	@if $screen==desktop {
+	// Extra large devices (large laptops and desktops, 1200px and up)
+		@media only screen and (min-width: 1200px) {
+			@content
+		}
+	}
+}
+
+// Specific media breaks for additional responsiveness
+
+@mixin break ($screenWidth) {
+	@media only screen and (max-width: $screenWidth) {
+		@content 
+	}
+}
+
+
+.mobile-only {
+  @include media(tablet) {
+    display: none;
+    }
+}
+
+.desktop-only {
+  @include media(phone) {
+    display: none;
+    }
+}
+
+/*------- Mobile Nav -------*/
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1005;
+  top: 0;
+  left: 0;
+  overflow-y: hidden;
+  transition: 0.5s;
+  a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: $white;
+    display: block;
+    transition: 0.3s;
+    &:hover, 
+    &:focus {
+      color: $purple;
+  			}
+    	}
+  .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    padding: 100%; //makes it insible but full page close
+		}
+	}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  background-color: $black;
+  border: 1rem solid $purple;
+  box-shadow: 0 0px 20px rgba(0,0,0,0.50), 0 0px 20px rgba(0,0,0,0.50);
+	}
+
+.hamburger {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  display: block;
+  svg {
+  background-color: $white;
+	 }
+  }
+  
+@media screen and (max-height: 450px) {
+  .overlay {
+    overflow-y: auto;
+	}
+  .overlay a {
+    font-size: 20px;
+	}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+	}
+}
+
+#mobile-nav {
+  @include media(ltablet) {
+    display: none;
+  	}
+  }

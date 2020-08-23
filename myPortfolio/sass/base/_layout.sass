@@ -1,0 +1,61 @@
+/* ============== Layout CSS ======================= */
+
+.wrapper
+	border: 0 solid $black
+	width: 100%
+	margin: 0 auto
+	@include break (400px)
+		box-shadow: none
+ 		border: 0
+		width: 100%
+	@include media(phone)
+		width: 95%
+	@include media(tablet)
+		box-shadow: 0 0px 20px rgba(0,0,0,0.50), 0 0px 20px rgba(0,0,0,0.50)
+		border: 1rem solid $black
+		width: 85%
+		margin: 0 auto
+	@include media(desktop)
+		max-width: 110rem
+
+@for $i from 1 through 12
+	.col-#{$i}
+		width: 100%/12 *$i
+
+[class*="col-"]
+	float: left
+	padding: 1rem
+
+@media only screen and (max-width: 768px)
+  /* For mobile phones: */
+  [class*="col-"]
+    width: 100%
+
+.row
+	display: flex
+	flex-direction: row
+	align-items: center
+	justify-content: center
+	&::after
+		content: ""
+		clear: both
+		display: table
+
+.row-reverse
+	display: flex
+	flex-direction: row-reverse
+	align-items: center
+	justify-content: center
+	&::after
+		content: ""
+		clear: both
+		display: table
+.row,
+.row-reverse
+	img
+		max-width: 100%
+		height: auto
+	@include media(phone)
+		flex-direction: column
+
+/*----------------------------------------------------*/
